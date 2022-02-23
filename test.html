@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Product image hover showcase</title>
+	<style>
+		.container {
+			display:flex;
+			flex-direction:row;
+			width:100%;
+			padding:50px;
+			box-sizing:border-box;
+		}
+		.product-img {
+			display:flex;
+			justify-content:center;
+			align-items:flex-end;
+			width:300px;
+			height:400px;
+			margin:15px;
+			background-color:#f6f6f6;
+			transition-delay: 0s;
+		    transition-duration: 0.3s;
+		    transition-timing-function: ease-in-out;
+		    background-size: cover;
+		    background-repeat: no-repeat;
+		    background-position: center center;
+		    background-image: url(./assets/img/product-pink01.jpg);
+		    opacity: 1;
+		}
+		.img2 {
+			background-image: url(./assets/img/product-yellow01.jpg);
+		}
+		.product-img .btn-addtocart {
+			display:block;
+			width:80%;
+			padding:15px;
+			margin-bottom:15px;
+			border-radius:25px;
+			text-align:center;
+			text-decoration:none;
+			font-size:16px;
+			color:#000;
+			background-color:rgba(255, 255, 255, 0.6);
+			opacity:0;
+		}
+		.product-img:hover .btn-addtocart {
+			opacity:1;
+			transition:0.4s;
+		}
+		.product-img .btn-addtocart:hover {
+			background-color:rgba(0, 0, 0, 0.5);
+			color:#fff;
+		}
+	</style>
+</head>
+<body>
+	
+	<div class="container">
+		<div class="product-img" data-images='["./assets/img/product-pink01.jpg", "./assets/img/product-pink02.jpg", "./assets/img/product-pink03.jpg"]'>
+			<a class="btn-addtocart" href="#">ADD TO CART</a>
+		</div>
+		<div class="product-img img2" data-images='["./assets/img/product-yellow01.jpg", "./assets/img/product-yellow02.jpg", "./assets/img/product-yellow03.jpg", "./assets/img/product-yellow04.jpg"]'>
+			<a class="btn-addtocart" href="#">ADD TO CART</a>
+		</div>
+	</div>
+
+	<script src="./assets/js/hanger.min.js"></script>
+	<script>
+		$hanger({
+			items: '.product-img'
+		});
+	</script>
+</body>
+</html>
